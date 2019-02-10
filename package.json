@@ -1,0 +1,15 @@
+{
+  "name": "morphogen-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "watchify -d index.js -o bundle.js",
+    "build": "browserify index.js -o bundle.js"
+  },
+  "author": "Joel Simon",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
