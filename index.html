@@ -46,15 +46,28 @@
             right: 0;
             margin: auto;
 			background: linear-gradient(230deg, #15eab3, #ea1515, #d58ffd, #f0d04d);
-background-size: 800% 800%;
+			background-size: 800% 800%;
 
--webkit-animation: bganim 30s ease infinite;
--moz-animation: bganim 30s ease infinite;
-animation: bganim 30s ease infinite;
-
-            font-size: 64px;
+			-webkit-animation: bganim 30s ease infinite;
+			-moz-animation: bganim 30s ease infinite;
+			animation: bganim 30s ease infinite;
 			
-            font-weight: normal;
+			@-webkit-keyframes bganim {
+			0%{background-position:0% 4%}
+			50%{background-position:100% 97%}
+			100%{background-position:0% 4%}
+		 }
+			@-moz-keyframes bganim {
+			0%{background-position:0% 4%}
+			50%{background-position:100% 97%}
+			100%{background-position:0% 4%}
+		 }
+			@keyframes bganim { 
+			0%{background-position:0% 4%}
+			50%{background-position:100% 97%}
+			100%{background-position:0% 4%}
+		 }
+
         }
         #test {
             max-width: 300px;
