@@ -209,9 +209,6 @@ function load(image, attributes) {
 		);
 		image.src = src;
 	} else if (image.length !== undefined) {
-		/* Treat as multiple images */
-
-		// Momentarily ignore errors
 		var reflected = [].map.call(image, function (img) { return load(img, attributes).catch(function (err) { return err; }); });
 
 		return Promise.all(reflected).then(function (results) {
@@ -230,12 +227,8 @@ function load(image, attributes) {
 
 	var promise = new Promise(function (resolve, reject) {
 		if (image.naturalWidth) {
-			// If the browser can determine the naturalWidth the
-			// image is already loaded successfully
 			resolve(image);
 		} else if (image.complete) {
-			// If the image is complete but the naturalWidth is 0px
-			// it is probably broken
 			reject(image);
 		} else {
 			image.addEventListener('load', fullfill);
@@ -491,8 +484,6 @@ module.exports = (regl) => {
                             1.5*D_a * lap.z - val.z*val.w*val.w + F * (1.0-val.z),
                             1.5*D_b * lap.w + val.z*val.w*val.w - (K+F) * val.w);
 
-                /*  Make the two systems mutually exclusive by having the
-                    dominant suppress the other. */
                 if (val.y > val.w) {
                     gl_FragColor = vec4(val.x, val.y, val.z, val.w/2.0);
                 } else {
