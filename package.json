@@ -1,5 +1,5 @@
 {
-  "name": "morphogen-site",
+  "name": "rbd",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "start": "watchify -d index.js -o bundle.js",
     "build": "browserify index.js -o bundle.js"
   },
-  "author": "Joel Simon",
+  "author": "robert convulse dempsey",
   "license": "ISC",
   "dependencies": {
   }
