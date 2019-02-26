@@ -37,9 +37,6 @@ module.exports = (regl) => {
                             D_b * lap.y + val.x*val.y*val.y - (K+F) * val.y,
                             1.5*D_a * lap.z - val.z*val.w*val.w + F * (1.0-val.z),
                             1.5*D_b * lap.w + val.z*val.w*val.w - (K+F) * val.w);
-
-                /*  Make the two systems mutually exclusive by having the
-                    dominant suppress the other. */
                 if (val.y > val.w) {
                     gl_FragColor = vec4(val.x, val.y, val.z, val.w/2.0);
                 } else {
